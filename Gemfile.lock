@@ -1,3 +1,9 @@
+GIT
+  remote: https://github.com/nT9/napua-view-tool
+  revision: fe8c737c415edb5b2e6cb8130fb0e9cd20916ea3
+  specs:
+    napua_view_tool (0.1.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -188,6 +194,7 @@ DEPENDENCIES
   friendly_id (~> 5.1.0)
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
+  napua_view_tool!
   pg (~> 0.18)
   pry-byebug
   puma (~> 3.7)
