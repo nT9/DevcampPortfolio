@@ -1,9 +1,8 @@
-<div class="portfolio-form", if logged_in?(:site_admin)>
-    <div class="container">
+<div class="portfolio-container">
+    <div class="container portfolio-container">
         <div class="row">
             <div class="col-md-8">
-                <%= image_tag @portfolio_item.main_image %>
-                
+                <%= image_tag portfolio_img(@portfolio_item.thumb_image, 'main'), width: '100%' %>
             </div>
 
             <div class="col-md-4">
@@ -25,7 +24,7 @@
             </div>
         </div>
         
-        <div class="row">
+        <div class="row", if logged_in?(:site_admin)>
             <div class="col-md-12">
                 <%= link_to "Edit Portfolio", edit_portfolio_url, class: "btn btn-secondary btn-block" if logged_in?(:site_admin) %>
             </div>
