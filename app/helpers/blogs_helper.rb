@@ -22,4 +22,8 @@ module BlogsHelper
     markdown_to_html = Redcarpet::Markdown.new(coderayified, options)
     markdown_to_html.render(text).html_safe
   end
+  
+  def blog_status_color(blog)
+      "color: #851545;" if blog.draft?
+  end
 end
