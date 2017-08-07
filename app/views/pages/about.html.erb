@@ -1,12 +1,96 @@
-<h1>About me</h1>
-
-<div class="row">
-    <div class="col-md-4">
-        <%= image_tag "profile.jpg", width: 400, alt:"Profile Image" %>
-    </div>
-    
-    <div class="col-md-8">
-        <p>Hi. How are you.</p>
+<div class = "app-card-container">
+    <div class = "card">
+        <h1>About me</h1>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <%= image_tag "profile.jpg", width: 300, alt:"Profile Image", class: "profile-img" %>
+                
+                <div class="skills">
+                    <% @skills.each do |skill| %>
+                        <div class="skill">
+                            <h4><%= skill.title %></h4>
+                            <div class="progress">
+                                <div 
+                                    class="progress-bar progress-bar-striped bg-warning"
+                                    role = "progressbar"
+                                    aria-valuenow = "<%= skill.percent_utilized %>"
+                                    aria-valuemax = "100"
+                                    style = "width: <%= skill.percent_utilized %>%"
+                                >
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    
+                        
+                    <% end %>
+                </div>
+            </div>
+            
+            
+            
+            <div class="col-md-8">
+                <p>This is supposed to be about me, but I'm boring. How are you?</p>
+                
+                <!--Experience Button-->
+                <p>
+                    <button
+                        class="btn btn-primary"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#experience"
+                        aria-expanded="false"
+                        aria-controler="experience"
+                    >
+                        Experience
+                    </button>
+                </p>
+                
+                <p>
+                    <div class="collapse" id="experience">
+                        <div class="card card-block">
+                            Library Volunteer
+                        </div>
+                        
+                        <div class="card card-block">
+                            Spy Hop Design Apprentice
+                        </div>
+                        
+                        <div class="card card-block">
+                            Code to Success Student
+                        </div>
+                    </div>
+                </p>
+                
+                <!--Education Button-->
+                <p>
+                    <button
+                        class="btn btn-primary"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#education"
+                        aria-expanded="false"
+                        aria-controler="education"
+                    >
+                        Education
+                    </button>
+                </p>
+                
+                <p>
+                    <div class="collapse" id="education">
+                        <div class="card card-block">
+                            High School: Salt Lake Center for Science Edutaion (SLCSE)
+                        </div>
+                        
+                        <div class="card card-block">
+                            College: TBD
+                        </div>
+                    </div>
+                </p>
+                    
+            </div>
+        </div>
     </div>
 </div>
 

@@ -7,16 +7,14 @@ module ApplicationHelper
           (link_to "Login",  new_user_session_path, class: style)
           
       else
-          (link_to "Edit Profile", edit_user_registration_path, class: style)+
-          " ".html_safe +
           (link_to "Logout",  destroy_user_session_path, method: :delete, class: style) 
       end
   end
   
-  def source_helper(layout_name)
+  def source_helper(styles)
       if session[:source]
-          greeting = "Thanks for visiting me from #{session[:source]}. Your are currently on the #{layout_name} page"
-          content_tag(:p, greeting, class: "source-greeting")
+          greeting = "Thanks for visiting me from #{session[:source]}. Want to send me a message? Just click #{ link_to "here", contact_path}."
+          content_tag(:div, greeting.html_safe, class: styles)
       end
   end
   

@@ -30,11 +30,22 @@ a:hover {
 html,
 body {
   height: 100%;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 body {
   color: #696fe1;
   text-align: center;
   text-shadow: 0 .05rem .1rem rgba(0,0,0,.5);
+}
+
+h1, .h1
+h2, .h2
+h3, .h3
+h4, .h4
+h5, .h5
+h6, .h6 {
+  font-family: 'Faustina', serif;
 }
 
 /* Extra markup and styles for table-esque vertical and horizontal centering */
@@ -233,4 +244,32 @@ body {
 
 .tech-news > .card {
   padding: 30px;
+}
+
+.app-card-container {
+  color: #848484;
+  text-align: left;
+}
+
+.app-card-container > .card {
+  padding: 40px;
+}
+
+.profile-img {
+  border: 1px solid grey;
+}
+
+.app-card-container a {
+  color: #6584a3;
+}
+
+.card-block {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  color: #423141;
+}
+
+.skill {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
