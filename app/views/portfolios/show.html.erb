@@ -3,10 +3,16 @@
         <div class="row">
             <div class="col-md-8">
                 <%= image_tag portfolio_img(@portfolio_item.main_image, 'main'), width: '100%' %>
+                
+                <% if logged_in?(:site_admin) %>
+                    <div id = "edit-btn">
+                        <%= link_to "Edit Portfolio", edit_portfolio_path(@portfolio_item), class: "btn btn-warning"%>
+                    </div>
+                <% end %>
             </div>
 
             <div class="col-md-4">
-                <h1><%= @portfolio_item.title %></h1>
+                    <h1><%= @portfolio_item.title %></h1>
                 
                 <hr>
     
@@ -20,12 +26,6 @@
                 
                 <% @portfolio_item.technologies.each do |t| %>
                 <p><%= t.name %></p>
-                <% end %>
-                
-                <% if logged_in?(:site_admin) %>
-                    <div>
-                        <%= link_to "Edit Portfolio", edit_portfolio_path(@portfolio_item), class: "btn btn-warning"%>
-                    </div>
                 <% end %>
                 
             </div>

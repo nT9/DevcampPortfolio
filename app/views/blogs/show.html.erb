@@ -14,13 +14,20 @@
     </span>
   </nav>
   
-  <%= @blog.topic.title %>
-  
-  <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
+  <b><%= @blog.topic.title %></b>
   
   <p>
     <%= markdown@blog.body %>
   </p>
+  
+  <!--Some Markdown code to use-->
+  <!--# Heading 1
+      ## Heading 2
+      ### Heading 3-->
+  <!--*italic*
+      **bold**
+      ***bold-italic***
+      [link](http://example.com)-->
   
   <%= render "comments/comment_form" %>
   
